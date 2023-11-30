@@ -7,7 +7,7 @@ import copy
 from datetime import datetime
 from pick import pick
 from time import sleep
-import pandas as pd  # add pandas package
+import pandas as pd
 
 
 # Create wrapper classes for using slack_sdk in place of slacker
@@ -58,7 +58,6 @@ class SlackDataLoader:
     def get_channel_messages(self, channel_name):
         '''
         write a function to get all the messages from a channel
-
         '''
 
     #
