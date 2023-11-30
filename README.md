@@ -1,21 +1,10 @@
 
-# Network Analysis Python Package
+# Slack Messages Analysis
 
 ## Overview
 
-This Python package, `network_analysis`, is designed for conducting network analysis task. It provides tools and utilities to analyze network data, with a focus on handling Slack messages from a previous 10 Academy training program.
+Slack Messages Analysis aims to evaluate candidates for the 12-week training program in Data Engineering and Machine Learning Engineering. It provides applicants with real-world experience of tasks in these domains and helps 10 Academy select suitable candidates.
 
-## What to do
-
-Several code snippets have been provided to serve as a starting point for your project. However, it's essential to note that the code has not undergone thorough testing, and errors are expected. Your task is to identify and rectify errors, remove unnecessary components, and incorporate any missing elements.
-
-Consider this initial code as a foundation for your solution, but do not rely on it in its current state. It's provided to give you a starting point, but you should be prepared to modify and enhance it to meet the specific requirements of your system.
-
-As you commence your work, focus on exploring the dataset to gain a deep understanding of its structure and contents. Attempt to answer various intriguing questions that arise during your exploration.
-
-For guidance on the specific questions to address, refer to the notebooks/parse_slack_data.ipynb notebook, where you'll find empty cells designed for your responses. Utilize these cells to document your findings, insights, and any challenges encountered.
-
-Remember, this is an iterative process, and refining your code and analyses is a crucial part of the learning experience. Regularly post question on slack, and don't hesitate to reach out to tutors if you encounter difficulties. Best of luck with your exploration and analysis!
 
 ## Table of Contents
 
@@ -166,10 +155,10 @@ This project is licensed under the MIT License.
 
 ## Network Analysis
 
-This is a starter python package to analze the slack data to learn about
+This is a starter Python package to analyze the Slack data to learn about
 
-* Patter of users messaging behaviour
-* Patter of replies and reactions of users to messages posted both by peers and admins
+* Pattern of users messaging behaviour
+* Pattern of replies and reactions of users to messages posted both by peers and admins
 * Discover sub-communities by building network graphs of message senders and those who reply or react to those messages
 
 
