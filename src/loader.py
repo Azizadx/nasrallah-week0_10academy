@@ -29,7 +29,7 @@ class SlackDataLoader:
 
     '''
 
-    def __init__(self, path):
+    def __init__(self, path='../anonymized/'):
         '''
         path: path to the slack exported data folder
         '''
@@ -71,6 +71,25 @@ class SlackDataLoader:
             userNamesById[user['id']] = user['name']
             userIdsByName[user['name']] = user['id']
         return userNamesById, userIdsByName
+
+    def read_json_files(self):
+        combined = []
+        names = [self.channels[i]['name'] for i in range(len(self.channels))]
+        for channel_name in names:
+            channel_files = defaultdict(list)
+            channel_path = self.path + channel_name + '/'
+            for json_file in glob.glob(f"{channel_path}*.json"):
+                with open(json_file, 'r', encoding="utf8") as slack_data:
+                    data = json.load(slack_data)
+
+                sent_date = os.path.basename(json_file)
+                channel_files[channel_name].append({
+                    "sent_date": sent_date,
+                    "msg": data
+                })
+
+            combined.append(channel_files)
+        return combined
 
 
 if __name__ == "__main__":
