@@ -10,5 +10,23 @@ services:
       POSTGRES_DB: slack-data
     networks:
       - week0
+  slack_db_mongodb:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - 27017:27017
+    networks:
+      - week0
 networks:
   week0:
+
+
+
+
+
+
+volumes:
+  mongodb_data:
