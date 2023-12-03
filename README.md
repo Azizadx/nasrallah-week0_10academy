@@ -1,5 +1,8 @@
 # Slack Messages Analysis
 
+## Demo 
+<img src="demo.gif" alt="Demo" style="width: 800px;"/>
+
 ## Overview 🚀
 
 Slack Messages Analysis is designed to assess candidates for the 12-week training program in Data Engineering and Machine Learning Engineering. This project provides applicants with hands-on experience in real-world tasks within these domains, aiding 10 Academy in selecting suitable candidates.
@@ -192,7 +195,7 @@ Your contributions and feedback are highly valued! Here are ways you can get inv
 Thank you for your interest in making this project better! 🚀
 
 ## Acknowledgments 🙌
-I am immensely grateful to the [10 Academy team]((https://github.com/10xac)) for providing me with this incredible opportunity to explore and deepen my knowledge in the fields of AI and data. 🌟 This journey has been invaluable, and I appreciate the support and guidance received.
+I am immensely grateful to the [10 Academy team](https://github.com/10xac) for providing me with this incredible opportunity to explore and deepen my knowledge in the fields of AI and data. 🌟 This journey has been invaluable, and I appreciate the support and guidance received.
 
 ##  License
 This project is licensed under the MIT License.
