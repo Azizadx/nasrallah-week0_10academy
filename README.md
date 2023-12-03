@@ -1,16 +1,20 @@
-
 # Slack Messages Analysis
 
-## Overview
+## Overview 🚀
 
-Slack Messages Analysis aims to evaluate candidates for the 12-week training program in Data Engineering and Machine Learning Engineering. It provides applicants with real-world experience of tasks in these domains and helps 10 Academy select suitable candidates.
+Slack Messages Analysis is designed to assess candidates for the 12-week training program in Data Engineering and Machine Learning Engineering. This project provides applicants with hands-on experience in real-world tasks within these domains, aiding 10 Academy in selecting suitable candidates.
+
+### Goal to Hit 🎯
+  - Patterns of users' messaging behavior.
+  - Patterns of replies and reactions of users to messages posted by both peers and admins.
+  - Discover sub-communities by building network graphs of message senders and those who reply or react to those messages.
 
 
 ## Table of Contents
 
 - [Installation](#installation)
-  - [Creating a Virtual Environment](#virtual-env)
-  - [Clone this package](#clone)
+  - [Creating a Virtual Environment](#creating-a-virtual-environment)
+  - [Clone this package](#clone-this-package)
 - [Usage](#usage)
   - [Configuration](#configuration)
   - [Data Loading](#data-loading)
@@ -19,24 +23,23 @@ Slack Messages Analysis aims to evaluate candidates for the 12-week training pro
 - [Documentation](#documentation)
 - [Notebooks](#notebooks)
 - [Contributing](#contributing)
+- [Acknowledgments](#acknowledgments)
 - [License](#license)
 
 ## Installation
 
 ### Creating a Virtual Environment
 
-#### Using Conda
+#### Using Conda 🐍
 
 If you prefer Conda as your package manager:
 
 1. Open your terminal or command prompt.
-
 2. Navigate to your project directory.
-
 3. Run the following command to create a new Conda environment:
 
-    ```bash
-    conda create --name your_env_name python=3.12
+   ```bash
+   conda create --name your_env_name python=3.12
     ```
     Replace `your_env_name` with the desired name for your environment e.g. week0 and `3.12` with your preferred Python version.
 
@@ -84,11 +87,11 @@ To install the `network_analysis` package, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/network_analysis.git
+    git clone https://github.com/Azizadx/nasrallah-week0_10academy.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd network_analysis
+    cd nasrallah-week0_10academy
     ```
  
 3. Install the required dependencies:
@@ -143,6 +146,34 @@ This will execute the unit tests located in the tests directory.
 
 ## Documentation
 Visit the docs directory for additional documentation and resources. The documentation covers important aspects such as code structure, best practices, and additional usage examples.
+### Database Schema Design 🗄️
+
+The project employs a well-thought-out database schema to organize and manage the data efficiently. Below is an overview of the key tables and relationships within the database:
+
+#### User Table
+
+- `user_id`: Unique identifier for each user.
+- `username`: User's username.
+- `email`: User's email address.
+- ...
+
+#### Message Table
+
+- `message_id`: Unique identifier for each message.
+- `user_id`: Foreign key referencing the `user_id` in the User table.
+- `channel_id`: Identifier for the Slack channel.
+- `timestamp`: Timestamp indicating when the message was sent.
+- `content`: The content of the message.
+- ...
+
+#### Reaction Table
+
+- `reaction_id`: Unique identifier for each reaction.
+- `message_id`: Foreign key referencing the `message_id` in the Message table.
+- `user_id`: Foreign key referencing the `user_id` in the User table.
+- `reaction_type`: Type of reaction (e.g., thumbs up, smiley face).
+
+Feel free to refer to the detailed schema documentation in the [`docs/database_schema.md`](docs/database_schema.md) file for more information.
 
 ## Notebooks
 The notebooks directory contains Jupyter notebooks that demonstrate specific use cases and analyses. Refer to these notebooks for hands-on examples.
@@ -150,16 +181,23 @@ The notebooks directory contains Jupyter notebooks that demonstrate specific use
 ## Contributing
 Contributions are welcome! Before contributing, please review our contribution guidelines.
 
+## 🙌 Want to Contribute or Report an Issue?
+
+Your contributions and feedback are highly valued! Here are ways you can get involved:
+
+- 🐛 **Report an Issue:** Found a bug or want to suggest an improvement? [Open an issue](../../issues/) and let us know. We appreciate detailed reports that help us understand and resolve the problem.
+
+- 🌟 **Contribute:** Ready to contribute to the project? Check out our [contribution guidelines](CONTRIBUTING.md) to get started. We welcome your ideas, bug fixes, and feature enhancements.
+
+Thank you for your interest in making this project better! 🚀
+
+## Acknowledgments 🙌
+I am immensely grateful to the [10 Academy team]((https://github.com/10xac)) for providing me with this incredible opportunity to explore and deepen my knowledge in the fields of AI and data. 🌟 This journey has been invaluable, and I appreciate the support and guidance received.
+
 ##  License
 This project is licensed under the MIT License.
 
-## Network Analysis
 
-This is a starter Python package to analyze the Slack data to learn about
-
-* Pattern of users messaging behaviour
-* Pattern of replies and reactions of users to messages posted both by peers and admins
-* Discover sub-communities by building network graphs of message senders and those who reply or react to those messages
 
 
 
