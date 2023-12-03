@@ -16,8 +16,6 @@ def connect_to_db():
     return conn
 
 
-
-
 @app.get("/reply_count")
 async def fetch_message_count():
     conn = connect_to_db()
@@ -25,7 +23,6 @@ async def fetch_message_count():
     df_message_count = pd.read_sql(query, conn)
     conn.close()
     return df_message_count.to_dict(orient='records')
-
 
 
 @app.get("/message_count")
@@ -37,12 +34,33 @@ async def fetch_message_count():
     return df_message_count.to_dict(orient='records')
 
 
-
-
 @app.get("/reaction_count")
 async def fetch_message_count():
     conn = connect_to_db()
-    query = "SELECT * FROM user_reaction_counts;"
+    query = "SELECT * FROM reaction_count;"
     df_message_count = pd.read_sql(query, conn)
     conn.close()
     return df_message_count.to_dict(orient='records')
+
+# ... (your existing code)
+
+
+@app.get("/avg_top20_reply_users_count")
+async def fetch_avg_top20_reply_users_count(channel: str = 'Random'):
+    conn = connect_to_db()
+    query = f"SELECT * FROM reaction_count WHERE channel = '{channel}';"
+    df_reaction_count = pd.read_sql(query, conn)
+    conn.close()
+
+    top20_senders = df_reaction_count.groupby(
+        'sender_name')['reply_users_count'].mean().sort_values(ascending=False)[:20]
+    return top20_senders.to_dict()
+
+
+@app.get("/sentiment")
+async def fetch_sentiment_data():
+    conn = connect_to_db()
+    query = "SELECT * FROM sentiment_for_day;"
+    df_sentiment = pd.read_sql(query, conn)
+    conn.close()
+    return df_sentiment.to_dict(orient='records')
